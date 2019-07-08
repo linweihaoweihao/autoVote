@@ -7,6 +7,7 @@ var voteUrl = "http://www.ofweek.com/vote/voteactivitycontent.do?method=modTotal
 var timeout = 20000 // 超时时间
 var startPage = 1  // 免费ip代理页数开始
 var endPage = 50  // 结束页面
+var synchCount  = 2  // 同步开始线程数量
 
 function getProxyWebpage(pn) {
     var options = {
@@ -89,7 +90,7 @@ function run(page) {
             const ips = extractProxy(html)
             return Promise.map(ips, function (ipUrl) {
                 return requestVote(ipUrl)
-            }, { concurrency: 1 })
+            }, { concurrency: synchCount })
         })
         .then(() => {
             ++page
