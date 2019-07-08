@@ -8,8 +8,10 @@ var startPage = 1  // 免费ip代理页数开始
 var endPage = 50  // 结束页面
 
 
-run： 
-npm install request cheerio bluebird /t
+run ： 
+npm install request cheerio bluebird
+
+
 node autoVote.js
 
 
