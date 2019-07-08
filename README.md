@@ -9,7 +9,7 @@ var endPage = 50  // 结束页面
 
 
 run： 
-npm install request cheerio bluebird
+npm install request cheerio bluebird /t
 node autoVote.js
 
 
